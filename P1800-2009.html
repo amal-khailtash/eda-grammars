@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<title>IEEE Std 1800&#8482;-2009 - IEEE Standard for SystemVerilog - Unified Hardware Design, Specification, and Verification Language BNF Grammar</title>
+
+<!--link href="http://kevinburke.bitbucket.org/markdowncss/markdown.css" rel="stylesheet"></link-->
+
+<!--xmp theme="Amelia" style="display:none;"-->
+<!--xmp theme="Cerulean" style="display:none;"-->
+<!--xmp theme="Cosmo" style="display:none;"-->
+<!--xmp theme="Cyborg" style="display:none;"-->
+<!--xmp theme="Journal" style="display:none;"-->
+<!--xmp theme="Readable" style="display:none;"-->
+<!--xmp theme="Simplex" style="display:none;"-->
+<!--xmp theme="Slate" style="display:none;"-->
+<!--xmp theme="Spacelab" style="display:none;"-->
+<!--xmp theme="Spruce" style="display:none;"-->
+<!--xmp theme="Superhero" style="display:none;"-->
+<!--xmp theme="United" style="display:none;"-->
+<xmp theme="Cerulean" style="display:none;">
+# Annex A
+(Normative)
+
+# Formal syntax
+The formal syntax of SystemVerilog is described using Backus-Naur Form (BNF).  The syntax of System-Verilog source is derived from the starting symbol source\_text.  The syntax of a library map file is derived from the starting symbol [library\_text](#library_text).  The conventions used are as follows:
+
+* Keywords and punctuation are in <span style="color:red; font-weight:bold;">bold-red</span> <span class="terminal">bold-red</span> text.
+* Syntactic categories are named in nonbold text.
+* A vertical bar ( | ) separates alternatives.
+* Square brackets ( [ ] ) enclose  optional items.
+* Braces ( { } ) enclose items that can be repeated zero or more times.
+
+The full syntax and semantics of SystemVerilog are not described solely using BNF.  The normative text description contained within the clauses and annexes of this standard provide additional details on the syntax and semantics described in this BNF.
+
+A *qualified term* in the syntax is a term such as *array\_identifier* for which the "array" portion represents some semantic intent and the "identifier" term indicates that the qualified term reduces to the "identifier" term in the syntax. The syntax does not completely define the semantics of such qualified terms; for example while an identifier which would qualify semantically as an array\_identifier is created by a declaration, such declaration forms are not explicitly described using *array\_identifier* in the syntax.
+
+## A.1 Source text
+### A.1.1 Library source text
+<pre><a id="library_text"></a>library_text
+  ::= { <a href="#library_description">library_description</a> }
+
+<a id="library_description"></a>library_description
+  ::= library_declaration
+    | include_statement
+    | config_declaration
+    | <font color="red">;</font>
+
+library_declaration
+  ::= <font color="red">library</font> library_identifier file_path_spec { <font color="red">,</font> file_path_spec }
+      [ <font color="red">-incdir</font> file_path_spec { <font color="red">,</font> file_path_spec } ] <font color="red">;</font>
+
+include_statement
+  ::= <font color="red">include</font> file_path_spec <font color="red">;</font>
+</pre>
+
+***
+**Name:** IEEE Std 1800&#8482;-2009 - IEEE Standard for SystemVerilog - Unified Hardware Design, Specification, and Verification Language grammar<br/>
+**Author:** Amal Khailtash<br/>
+**Created:** 2013/01/09<br/>
+**Version:** 1.0.0<br/>
+***
+e-mail me at <amal.khailtash@gmail.com> or tweet me [@amal_khailtash](http://twitter.com/amal_khailtash)
+
+<hr/>
+<div style="background:#fafaff; min-height:50px; padding:0 5px; margin:0">
+  <div style="float:left;"><img style="width:50px; margin:0; margin-right:10px;" src="https://twitter.com/images/resources/twitter-bird-light-bgs.png"/></div>
+  <div style="padding-top:15px; padding-bottom:10px;">Follow me on Twitter: <a href="http://twitter.com/amal_khailtash">@amal_khailtash</a></div>
+</div>
+
+<hr/>
+
+</xmp>
+
+<script src="http://strapdownjs.com/v/0.1/strapdown.js"></script>
+</html>
